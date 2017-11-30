@@ -12,7 +12,7 @@
     "prefer-stable": true,
     "require": {
         "dnadesign/silverstripe-elemental": "2.x-dev",
-        "nyeholt/silverstripe-listingpage": "2.x-dev"
+        "nyeholt/silverstripe-listingpage": "~2.1"
     },
     "extra": {
         "branch-alias": {
