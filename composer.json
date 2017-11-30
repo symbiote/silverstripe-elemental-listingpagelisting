@@ -1,5 +1,5 @@
 {
-    "name": "symbiote/silverstripe-elemental-listingpagelisting",
+    "name": "gheggie/silverstripe-elemental-listingpagelisting",
     "description": "An elemental block showing a Listing Page's listing",
     "type": "silverstripe-vendormodule",
     "keywords": ["silverstripe", "element", "elemental", "listingpage"],
