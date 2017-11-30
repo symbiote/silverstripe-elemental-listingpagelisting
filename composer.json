@@ -1,0 +1,22 @@
+{
+    "name": "symbiote/silverstripe-elemental-listingpagelisting",
+    "description": "An elemental block showing a Listing Page's listing",
+    "type": "silverstripe-vendormodule",
+    "keywords": ["silverstripe", "element", "elemental", "listingpage"],
+    "license": "BSD-3-Clause",
+    "authors": [{
+        "name": "Grant Heggie",
+        "email": "grant@symbiote.com.au"
+    }],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "dnadesign/silverstripe-elemental": "2.x-dev",
+        "nyeholt/silverstripe-listingpage": "2.x-dev"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        }
+    }
+}
