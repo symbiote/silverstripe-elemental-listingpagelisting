@@ -2,8 +2,10 @@
 
 namespace Symbiote\Elemental\Model;
 
-use DNADesign\Elemental\Models\BaseElement;
 use Symbiote\ListingPage\ListingPage;
+use SilverStripe\Control\Controller;
+use DNADesign\Elemental\Models\BaseElement;
+
 use SilverStripe\ORM\FieldType\DBField;
 
 class ElementListingPageListing extends BaseElement 
