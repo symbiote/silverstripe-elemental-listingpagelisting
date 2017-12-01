@@ -50,10 +50,10 @@ class ElementListingPageListing extends BaseElement
      */
     public function getListing()
     {
-        $page = $this->getPage();
+        $page = Controller::curr()->data();
 
         // Validation probably makes this unnecessary
-        if (!($page instanceof ListingPage)) {
+        if (!$page || !($page instanceof ListingPage)) {
             return;
         }
 
