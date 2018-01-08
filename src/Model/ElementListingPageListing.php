@@ -3,9 +3,7 @@
 namespace Symbiote\Elemental\Model;
 
 use Symbiote\ListingPage\ListingPage;
-use SilverStripe\Control\Controller;
 use DNADesign\Elemental\Models\BaseElement;
-
 use SilverStripe\ORM\FieldType\DBField;
 
 class ElementListingPageListing extends BaseElement 
@@ -52,10 +50,8 @@ class ElementListingPageListing extends BaseElement
      */
     public function getListing()
     {
-        $page = Controller::curr()->data();
-
-        // Validation probably makes this unnecessary
-        if (!$page || !($page instanceof ListingPage)) {
+        $page = $this->getPage();
+        if (!$page || !($page instanceof \Symbiote\ListingPage\ListingPage)) {
             return;
         }
 
@@ -75,7 +71,7 @@ class ElementListingPageListing extends BaseElement
         $result = parent::validate();
         $page = $this->getPage();
 
-        if (!($page instanceof ListingPage)) {
+        if (!($page instanceof \Symbiote\ListingPage\ListingPage)) {
             $result->addError('This block can only be added to a Listing Page');
         }
 
