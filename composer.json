@@ -11,8 +11,13 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "dnadesign/silverstripe-elemental": ">=2.0 <5.0",
-        "symbiote/silverstripe-listingpage": "~2.1"
+        "dnadesign/silverstripe-elemental": "^4 || ^5",
+        "symbiote/silverstripe-listingpage": "^2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Symbiote\\Elemental\\": "src/"
+        }
     },
     "extra": {
         "branch-alias": {

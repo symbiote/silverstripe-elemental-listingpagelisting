@@ -4,7 +4,7 @@ An elemental element that outputs the listing contents of the Listing Page it's 
 
 ## Requirements
 
-* SilverStripe 4.0+
+* SilverStripe ^4 || ^5
 * Elemental
 * ListingPage
 
