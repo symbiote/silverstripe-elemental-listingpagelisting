@@ -2,13 +2,16 @@
 
 namespace Symbiote\Elemental\Model;
 
+use SilverStripe\CMS\Controllers\CMSMain;
+use SilverStripe\CMS\Model\SiteTree;
+use SilverStripe\Control\Controller;
+use SilverStripe\Security\Permission;
 use Symbiote\ListingPage\ListingPage;
 use DNADesign\Elemental\Models\BaseElement;
 use SilverStripe\ORM\FieldType\DBField;
 
-class ElementListingPageListing extends BaseElement 
+class ElementListingPageListing extends BaseElement
 {
-
     private static $table_name = 'ElementListingPageListing';
 
     private static $singular_name = 'listing block';
@@ -30,22 +33,22 @@ class ElementListingPageListing extends BaseElement
      */
     public function getType()
     {
-        return _t(__CLASS__ . '.BlockType', 'Listing Page listing');
+        return _t(self::class . '.BlockType', 'Listing Page listing');
     }
 
     /**
      * @return string
      */
-    public function getSummary() 
+    public function getSummary()
     {
         return '';
     }
 
     /**
      * Generate the listing content.
-     * {@link ListingPage->Content()} assumes the placeholder is in the $Content field, 
+     * {@link ListingPage->Content()} assumes the placeholder is in the $Content field,
      * so we need to temporarily replace the $Content value with the placeholder.
-     * 
+     *
      * @return HTMLText|null
      */
     public function getListing()
@@ -78,4 +81,17 @@ class ElementListingPageListing extends BaseElement
         return $result;
     }
 
+    public function canCreate($member = null, $context = [])
+    {
+        if (!($controller = Controller::curr())
+            || !$controller->hasMethod('currentPageID')
+            || !($id = $controller->currentPageID())
+            || !($page = SiteTree::get_by_id($id))
+            || !($page instanceof \Symbiote\ListingPage\ListingPage)
+        ) {
+            return false;
+        }
+
+        return parent::canCreate($member, $context);
+    }
 }
